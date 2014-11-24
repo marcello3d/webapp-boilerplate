@@ -1,0 +1,25 @@
+{
+  "name": "webapp-boilerplate",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "browserkthx": "0.0.2",
+    "enchilada": "^0.11.0",
+    "express": "^4.10.3",
+    "hbs": "^2.7.0",
+    "safestart": "^0.3.1",
+    "serve-favicon": "^2.1.7",
+    "serve-static": "^1.7.1",
+    "stylus": "^0.49.3",
+    "taters": "^0.2.0",
+    "veto": "0.0.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "node test"
+  },
+  "private": true
+}
