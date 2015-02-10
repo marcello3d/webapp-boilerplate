@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+// Verify dependencies
+try {
+    require('safestart');
+} catch (err) {
+    console.error('Dependency error: ' + err);
+    process.exit(-1);
+}
+
+require('localenv');
+var debug = require('debug')('app');
+
+var app = require('../app');
+
+var server = app.listen(process.env.PORT || 3000, function() {
+    debug('listening on port %d', server.address().port);
+});
+
+process.on('uncaughtException', function(err) {
+    log.error(err);
+
+    // stop after a short window to allow log to send if needed
+    setTimeout(process.exit.bind(process, 1), 1000);
+});
